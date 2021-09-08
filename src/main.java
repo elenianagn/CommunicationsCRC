@@ -17,7 +17,7 @@ class CRC {
         int[] PDivisor=new int[P];
 
         int[] remainderCRC = divide(K,PDivisor);
-        for(int i=0 ; i < remainderCRC.length-1 ; i++) {
+        for(int i=0;i<remainderCRC.length-1;i++) {
             System.out.print(remainderCRC[i]);
         }
         System.out.println("\nΟ κώδικας CRC είναι:");
@@ -25,14 +25,12 @@ class CRC {
         for(int i=0 ; i < remainderCRC.length-1 ; i++) System.out.print(remainderCRC[i]);
         System.out.println();
         //CHECK THIS AGAIN
-        int[] sent_data = new int[K.length + remainderCRC.length - 1];
+        int[] sent_data=new int[K.length+remainderCRC.length-1];
         System.out.println("Enter the data to be sent:");
         for(int i=0 ; i < sent_data.length ; i++) {
             System.out.println("Enter bit number "+(sent_data.length-i)+":");
             sent_data[i] = scan.nextInt();
         }
-
-
         receive(sent_data, PDivisor);
          //UNTIL HERE
     }
@@ -85,4 +83,3 @@ class CRC {
         System.out.println("Data was received without any error.");
     }
 }
-//0
