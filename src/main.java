@@ -39,8 +39,7 @@ class CRC {
     //Οι πρώτες δύο μέθοδοι δημιουργούν ένα τυχαίο binary αριθμό άναλογα τον αριθμό ψηφίων που δίνει ο χρήστης
     //Πιο συγκεκριμένα η μέθοδος creatingRandom δημιουργεί binary και το creationofBinary δημιουργεί το string binary
     static int creatingRandom(){
-        int num =(1+(int)(Math.random()*100))%2;
-        return num;
+        return (1+(int)(Math.random()*100))%2;
     }
     static String creationofBinary(int n){
         String S="";
