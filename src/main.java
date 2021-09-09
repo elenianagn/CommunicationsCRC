@@ -10,7 +10,8 @@ class CRC {
         int n= scan.nextInt();
         int[] K=new int[n];
        // creationofBinary(n);
-        K[n]= Integer.parseInt(creationofBinary(n));
+        K[n-1]= Integer.parseInt(creationofBinary(n));
+        System.out.println(K[n-1]);
         //DIVISOR
         System.out.println("\nP");
         int P=scan.nextInt();
@@ -25,13 +26,15 @@ class CRC {
         for(int i=0 ; i < remainderCRC.length-1 ; i++) System.out.print(remainderCRC[i]);
         System.out.println();
         //CHECK THIS AGAIN
-        int[] sent_data=new int[K.length+remainderCRC.length-1];
+       /* int[] sent_data=new int[K.length+remainderCRC.length-1];
         System.out.println("Enter the data to be sent:");
         for(int i=0 ; i < sent_data.length ; i++) {
             System.out.println("Enter bit number "+(sent_data.length-i)+":");
             sent_data[i] = scan.nextInt();
         }
         receive(sent_data, PDivisor);
+
+        */
          //UNTIL HERE
     }
     //Οι πρώτες δύο μέθοδοι δημιουργούν ένα τυχαίο binary αριθμό άναλογα τον αριθμό ψηφίων που δίνει ο χρήστης
