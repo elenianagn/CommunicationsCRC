@@ -4,23 +4,20 @@ import java.util.*;
 class CRC {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        //int n ;
-
+        //K bits
         System.out.println("Κ");
         int n= scan.nextInt();
         int[] K=new int[n];
-       // creationofBinary(n);
+        //creationofBinary(n);
         K[n-1]= Integer.parseInt(creationofBinary(n));
         System.out.println(K[n-1]);
         //DIVISOR
         System.out.println("\nP");
         int P=scan.nextInt();
         int[] PDivisor=new int[P];
-
         int[] remainderCRC = divide(K,PDivisor);
-        for(int i=0;i<remainderCRC.length-1;i++) {
-            System.out.print(remainderCRC[i]);
-        }
+        for(int i=0;i<remainderCRC.length-1;i++) System.out.print(remainderCRC[i]);
+
         System.out.println("\nΟ κώδικας CRC είναι:");
         for (int j:K) System.out.print(j);
         for(int i=0 ; i < remainderCRC.length-1 ; i++) System.out.print(remainderCRC[i]);
