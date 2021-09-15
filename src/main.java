@@ -29,7 +29,7 @@ class CRC {
             System.out.println("Enter bit number "+(sent_data.length-i)+":");
             sent_data[i] = scan.nextInt();
         }
-        receive(sent_data, PDivisor);
+        CRCcheck(sent_data, PDivisor);
 
         */
          //UNTIL HERE
@@ -72,7 +72,7 @@ class CRC {
         return 1;
     }
     //Έλεγχος του CRC
-    static void receive(int[] data,int[] divisor){
+    static void CRCcheck(int[] data,int[] divisor){
         int[] remainder=divide(data,divisor);
         for (int j:remainder){
             if(j!=0){
