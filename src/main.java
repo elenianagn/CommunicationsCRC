@@ -3,20 +3,26 @@ import java.util.*;
 
 class CRC {
     public static void main(String[] args) {
+
         Scanner scan = new Scanner(System.in);
         //K bits
         System.out.println("Κ");
         int n= scan.nextInt();
-        int[] K=new int[n];
-        //creationofBinary(n);
-        K[n-1]= Integer.parseInt(creationofBinary(n));
-        System.out.println(K[n-1]);
+        int[] K;
+        K = creationofBinary(n);
+        System.out.println(printBinary(K));
+
         //DIVISOR
         System.out.println("\nP");
-        int P=scan.nextInt();
-        int[] PDivisor=new int[P];
+        String P = scan.next();
+        int[] PDivisor = new int[P.length()];
+        for(int k =0;k<P.length();k++){
+            PDivisor[k] = P.charAt(k);
+            System.out.println(P.charAt(k));
+        }
+        System.out.println(printBinary(PDivisor));
         int[] remainderCRC = divide(K,PDivisor);
-        for(int i=0;i<remainderCRC.length-1;i++) System.out.print(remainderCRC[i]);
+        //for(int i=0;i<remainderCRC.length-1;i++) System.out.print(remainderCRC[i]);
 
         System.out.println("\nΟ κώδικας CRC είναι:");
         for (int j:K) System.out.print(j);
@@ -39,13 +45,19 @@ class CRC {
     static int creatingRandom(){
         return (1+(int)(Math.random()*100))%2;
     }
-    static String creationofBinary(int n){
-        String S="";
+    static int[] creationofBinary(int n){
+        int[] binary = new int[n];
         for(int i=0;i<n;i++){
             int Ran=creatingRandom();
-            S=S+String.valueOf(Ran);
+            binary[i] = Ran;
         }
-        return S;
+        return binary;
+    }
+    static String printBinary(int[] binaryToPrint){
+        int size = binaryToPrint.length;
+        StringBuilder toPrint = new StringBuilder();
+        for(int y=size-1;y>=0;y--) toPrint.append(binaryToPrint[y]);
+        return toPrint.toString();
     }
     //Οι επόμενες δύο μέθοδοι αναλαμβάνουν την επεξεργασία του binary string για τον υπολογισμό του CRC (FCS)
     //Ώς πρότυπο υπολογισμού χρησιμοποιήτε ο αριθμός P (divisor)
