@@ -16,6 +16,7 @@ class CRC {
         System.out.println("\nP");
         String P = scan.next();
         int[] PDivisor = new int[P.length()];
+        //for(int i=n-1;i>=0;i--)PDivisor[i]=0;
         for(int k =0;k<P.length();k++){
             PDivisor[k] = P.charAt(k);
             System.out.println(P.charAt(k));
